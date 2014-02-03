@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="us">
+	<head>
+		<meta charset="utf-8">
+		<title>Hearts A Swirl Financials</title>
+		<script src="{{STATIC_URL}}js/jquery-1.10.2.js"></script>
+		<script src="{{STATIC_URL}}js/jquery-ui-1.10.4.custom.js"></script>
+		<link href="{{STATIC_URL}}css/eggplant/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+		<link rel="stylesheet" href="{{ STATIC_URL }}django_tables2/themes/paleblue/css/screen.css" />
+		<script>
+			$(function() {
+				$( "#accordion" ).accordion();
+				$( "#button" ).button();
+				$( "#radioset" ).buttonset();
+			});
+		</script>
+		<style>
+			body{
+				font: 62.5% "Trebuchet MS", sans-serif;
+				margin: 10px;
+				width: 90%;
+			}
+			.left{
+				width: 150px;
+				padding-top: 70px;
+				float: left;
+			}
+			.top{
+				margin: 10px;
+				height: 60px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				border-radius: 8px;
+			  border: 1px solid #7e7783;
+			  #background: #3d3644 url({{STATIC_URL}}css/eggplant/images/ui-bg_gloss-wave_30_3d3644_500x100.png) 50% top repeat-x;
+			  background: #3d3644 url({{STATIC_URL}}css/eggplant/images/ui-bg_highlight-soft_25_30273a_1x100.png) 50% top repeat-x;
+		        color: #ffffff;	  
+				width: 95%;
+			}
+			.top_content{
+				padding: 5px;
+				vertical-align: middle;
+				text-align: center;
+			}
+			.middle{
+				padding-top: 70px;
+				padding-left: 30px;
+				float: left;
+			}
+
+
+		</style>
+	</script>
+
+</head>
+<body>
+	<div class="top">
+		<div class="top_content">
+			<h1>Hearts A Swirl Management</h1>
+		</div>
+	</div>
+	<div class="left">
+		<div id="accordion">
+			<h1><a href="accounts.html">Accounts</a></h1>
+
+			<div>
+				<a href="list_accounts.html">List of Accounts</a>
+				<a href="chart_of_accounts.html">Chart of Accounts</a>
+				<a href="add_account.html">Add Account</a>
+			</div>
+			<h1>Transactions</h1>
+			<div>
+				<a href="button">New Transaction</a>
+				<a href="button">Search Transactions</a>
+			</div>
+			<h1>Entries</h1>
+			<div>
+				<a href="button">New Entry</a>
+				<a href="button">Search Transactions</a>
+			</div>
+			<h1>Inventory</h1>
+			<div>
+				<a href="button">Materials</a>
+				<a href="button">Finished Goods</a>
+			</div>
+		</div>
+	</div>
+	<div class="middle">
+		    {% block content %}{% endblock %}
+	</div>
+</body>
+</html>

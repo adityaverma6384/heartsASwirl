@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load render_table from django_tables2 %}
+
+{% block content %}
+
+
+<h1>Chart of Accounts</h1>
+<hr>
+<h2>Assets</h2>
+{% for account in assets %}
+{{account.description}}<br>
+{% endfor %}
+<h2>Liabilities</h2>
+{% for account in liabilities %}
+{{account.description}}<br>
+{% endfor %}
+<h2>Equities</h2>
+{% for account in equities %}
+{{account.description}}<br>
+{% endfor %}
+<h2>Revenues</h2>
+{% for account in revenues %}
+{{account.description}}<br>
+{% endfor %}
+<h2>Expenses</h2>
+{% for account in expenses %}
+{{account.description}}<br>
+{% endfor %}
+<br>
+<br>
+<a href="chart_of_accounts_pdf.html">Download PDF</span></a>
+
+
+{% endblock %}

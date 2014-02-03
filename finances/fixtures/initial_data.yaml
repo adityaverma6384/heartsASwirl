@@ -1,0 +1,33 @@
+- model: finances.accounttype
+  pk: 1
+  fields:
+    name: asset
+    positive_credit: false
+- model: finances.accounttype
+  pk: 2
+  fields:
+    name: liability
+    positive_credit: true
+- model: finances.accounttype
+  pk: 3
+  fields:
+    name: equity
+    positive_credit: true
+- model: finances.accounttype
+  pk: 4
+  fields:
+    name: revenue
+    positive_credit: true
+- model: finances.accounttype
+  pk: 5
+  fields:
+    name: expense
+    positive_credit: false
+- model: finances.entrytype
+  pk: 1
+  fields:
+    name: debit
+- model: finances.entrytype
+  pk: 2
+  fields:
+    name: credit
