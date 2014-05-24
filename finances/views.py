@@ -7,6 +7,8 @@ from reportlab.lib.units import inch
 import datetime
 
 from finances.models import Account
+from finances.models import Transaction
+from finances.models import MaterialsInventory, MaterialsInventoryItem
 
 def index(request):
     template = loader.get_template('finances/index.html')
@@ -17,6 +19,10 @@ def index(request):
 
 def list_accounts(request):
     return render(request, "finances/list_accounts.html", {"accounts": Account.objects.all()})
+
+def materials(request):
+    return render(request, "finances/materials.html", {"materials":
+        MaterialsInventory.objects.all()})
 
 def chart_of_accounts(request):
     template = loader.get_template('finances/chart_of_accounts.html')
@@ -31,6 +37,35 @@ def chart_of_accounts(request):
         'equities': equities,
         'revenues': revenues,
         'expenses': expenses,
+        })
+    return HttpResponse(template.render(context))
+
+def dashboard(request):
+    template = loader.get_template('finances/dashboard.html')
+    assets = Account.objects.filter(type__name='asset')
+    liabilities = Account.objects.filter(type__name='liability')
+    equities = Account.objects.filter(type__name='equity')
+    revenues = Account.objects.filter(type__name='revenue')
+    expenses = Account.objects.filter(type__name='expense')
+
+    transactions = Transaction.objects.order_by("-date")[:10]
+
+    context = RequestContext(request, {
+        'assets': assets,
+        'liabilities': liabilities,
+        'equities': equities,
+        'revenues': revenues,
+        'expenses': expenses,
+        'transactions': transactions,
+        })
+    return HttpResponse(template.render(context))
+
+def transactions(request):
+    template = loader.get_template('finances/transactions.html')
+    transactions = Transaction.objects.order_by("-date")[:10]
+
+    context = RequestContext(request, {
+        'transactions': transactions,
         })
     return HttpResponse(template.render(context))
 

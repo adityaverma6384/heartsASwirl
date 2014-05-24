@@ -70,9 +70,32 @@
 <div class="transactions">
 	<h2>Journal</h2>
 	<hr style='background-color:#000000;border-width:0;color:#000000;height:1px;line-height:0;text-align:left;width:100%;'/>
+	<table width="100%">
+		<tr>
+			<th width="15%">Date</th>
+			<th width="55%">Description/Account</th>
+			<th width="15%">Debit</th>
+			<th width="15%">Credit</th>
+	{% for transaction in transactions %}
+		<tr>
+			<td>{{transaction.date}}</td>
+			<td>{{transaction.description}}</td>
+		</tr>
+			{% for entry in transaction.entries.all %}
+		<tr>
+			<td></td><td>{{entry.account.number}} {{ entry.account }}</td>
+			{% if entry.type.name == "credit" %}
+			
+			<td></td><td>	{{entry.amount}}</td>
+			{% else %}
+			<td>	{{entry.amount}}</td>
+			{% endif %}
+		</tr>
+			{% endfor %}
+	{% endfor %}
+	</table>
+
 </div>
 <br>
 <br>
-
-
 {% endblock %}

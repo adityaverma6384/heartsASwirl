@@ -93,6 +93,8 @@ class Transaction(models.Model):
         db_table = 'transaction'
     def __unicode__(self):
         return str(self.date) + " " +" " +  self.description
+    def balance(self):
+	return self.amount
 
 class Unit(models.Model):
     name = models.CharField(max_length=32L)

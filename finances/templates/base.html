@@ -21,7 +21,7 @@
 				width: 90%;
 			}
 			.left{
-				width: 150px;
+				width: 20%;
 				padding-top: 70px;
 				float: left;
 			}
@@ -32,10 +32,10 @@
 				left: 0;
 				top: 0;
 				border-radius: 8px;
-			  border: 1px solid #7e7783;
-			  #background: #3d3644 url({{STATIC_URL}}css/eggplant/images/ui-bg_gloss-wave_30_3d3644_500x100.png) 50% top repeat-x;
-			  background: #3d3644 url({{STATIC_URL}}css/eggplant/images/ui-bg_highlight-soft_25_30273a_1x100.png) 50% top repeat-x;
-		        color: #ffffff;	  
+				border: 1px solid #7e7783;
+				#background: #3d3644 url({{STATIC_URL}}css/eggplant/images/ui-bg_gloss-wave_30_3d3644_500x100.png) 50% top repeat-x;
+				background: #3d3644 url({{STATIC_URL}}css/eggplant/images/ui-bg_highlight-soft_25_30273a_1x100.png) 50% top repeat-x;
+				color: #ffffff;	  
 				width: 95%;
 			}
 			.top_content{
@@ -44,9 +44,34 @@
 				text-align: center;
 			}
 			.middle{
+				width: 75%;
 				padding-top: 70px;
-				padding-left: 30px;
+				padding-left: 20px;
 				float: left;
+			}
+			.account {
+				float: left;
+				padding: 15px;
+				margin: 15px;
+				border-radius: 6px;
+				text-align: right;
+				background: #dcd9de url({{STATIC_URL}}css/eggplant/images/ui-bg_highlight-soft_100_dcd9de_1x100.png) 50% 50%;
+				background-size: 100% 100%;
+			}
+			.account h2,
+			.transactions h2 {
+				text-align: left;
+				padding: 0px;
+				margin: 0px;
+			}
+			.transactions {
+				width: 90%;
+				padding: 15px;
+				float: left;
+				margin: 15px;
+				border-radius: 6px;
+				background: #dcd9de url({{STATIC_URL}}css/eggplant/images/ui-bg_highlight-soft_100_dcd9de_1x100.png) 50% 50%;
+				background-size: 100% 100%;
 			}
 
 
@@ -62,32 +87,36 @@
 	</div>
 	<div class="left">
 		<div id="accordion">
+			<h1>Home</h1>
+			<div>
+				<a href="/finances/dashboard.html">Dashboard</a><br>
+			</div>
 			<h1><a href="accounts.html">Accounts</a></h1>
 
 			<div>
-				<a href="list_accounts.html">List of Accounts</a>
-				<a href="chart_of_accounts.html">Chart of Accounts</a>
+				<a href="/finances/account/list_accounts.html">List of Accounts</a><br>
+				<a href="/finances/account/chart_of_accounts.html">Chart of Accounts</a><br>
 				<a href="add_account.html">Add Account</a>
 			</div>
 			<h1>Transactions</h1>
 			<div>
-				<a href="button">New Transaction</a>
-				<a href="button">Search Transactions</a>
+				<a href="button">New Transaction</a><br>
+				<a href="button">Search Transactions</a><br>
 			</div>
 			<h1>Entries</h1>
 			<div>
-				<a href="button">New Entry</a>
-				<a href="button">Search Transactions</a>
+				<a href="button">New Entry</a><br>
+				<a href="button">Search Transactions</a><br>
 			</div>
 			<h1>Inventory</h1>
 			<div>
-				<a href="button">Materials</a>
-				<a href="button">Finished Goods</a>
+				<a href="button">Materials</a><br>
+				<a href="button">Finished Goods</a><br>
 			</div>
 		</div>
 	</div>
 	<div class="middle">
-		    {% block content %}{% endblock %}
+		{% block content %}{% endblock %}
 	</div>
 </body>
 </html>

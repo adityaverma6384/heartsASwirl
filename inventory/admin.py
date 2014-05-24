@@ -15,6 +15,10 @@ class MaterialsInventoryItemAdmin(admin.ModelAdmin):
     fields = ['name', 'unit', 'price_per_unit', 'description', 'photo', 'date_last_purchased', 'date_last_used']
 admin.site.register(MaterialsInventoryItem, MaterialsInventoryItemAdmin)
 admin.site.register(Role)
-admin.site.register(Transaction)
+class TransactionAdmin(admin.ModelAdmin):
+    fields = ['date', 'description', 'amount', 'account' ]
+    readonly_fields = ['balance']
+    list_display = ('date', 'description', 'amount', 'account', 'balance')
+admin.site.register(Transaction, TransactionAdmin)
 admin.site.register(Unit)
 admin.site.register(User)
