@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.template import RequestContext, loader
 from django.core import serializers
 from django.shortcuts import render
+from django.db.models import Sum
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch
 import datetime
@@ -49,6 +50,7 @@ def dashboard(request):
     expenses = Account.objects.filter(type__name='expense')
 
     transactions = Transaction.objects.order_by("-date")[:10]
+    totalInventoryValue = MaterialsInventory.objects.aggregate(Sum('cost'))
 
     context = RequestContext(request, {
         'assets': assets,
@@ -57,6 +59,7 @@ def dashboard(request):
         'revenues': revenues,
         'expenses': expenses,
         'transactions': transactions,
+        'totalInventoryValue': totalInventoryValue,
         })
     return HttpResponse(template.render(context))
 

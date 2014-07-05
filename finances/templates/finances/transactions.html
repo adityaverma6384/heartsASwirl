@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1>Transactions</h1>
+<hr style='background-color:#000000;border-width:0;color:#000000;height:1px;line-height:0;text-align:left;width:100%;'/>
+<div class="transactions">
+	<h2>Journal</h2>
+	<hr style='background-color:#000000;border-width:0;color:#000000;height:1px;line-height:0;text-align:left;width:100%;'/>
+	<table width="100%">
+		<tr>
+			<th width="15%">Date</th>
+			<th width="35%">Description/Account</th>
+			<th width="25%">Debit</th>
+			<th width="25%">Credit</th>
+	{% for transaction in transactions %}
+		<tr>
+			<td>{{transaction.date}}</td>
+			<td>{{transaction.description}}</td>
+		</tr>
+			{% for entry in transaction.entries.all %}
+		<tr>
+				<td></td><td>{{entry.account.number}} {{ entry.account }}</td>
+				{% if entry.type.name == "credit" %}
+					<td></td><td>	{{entry.amount}}</td>
+				{% else %}
+					<td>	{{entry.amount}}</td>
+				{% endif %}
+			
+
+			{% endfor %}
+			<td></td><td></td><td>
+				{{ transaction.materialsinventory_set.count }}
+				{% for item in transaction.materialsinventory_set.all %}
+				{{item.item.name}}    {{item.cost}} <br>
+					{% endfor %} 
+			</tr>
+			</td>
+	{% endfor %}
+	</table>
+
+</div>
+<br>
+<br>
+{% endblock %}

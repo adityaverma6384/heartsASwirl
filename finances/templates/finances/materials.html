@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load render_table from django_tables2 %}
+
+{% block content %}
+
+
+</script>
+<h1>Total Inventory Assets</h1>
+{{ for x in materials:
+	x += materials.cost
+   x	}} 
+
+<h1>Materials in Inventory</h1>
+{% render_table materials %}
+
+
+{% endblock %}

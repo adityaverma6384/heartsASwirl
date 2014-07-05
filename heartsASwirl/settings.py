@@ -16,7 +16,7 @@ DATABASES = {
         # The following settings are not used with sqlite3:
         'USER': 'root',
         'PASSWORD': 'admin',
-        'HOST': '127.0.0.1',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'HOST': 'nas',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '3306',                      # Set to empty string for default.
     }
 }
@@ -136,6 +136,7 @@ INSTALLED_APPS = (
     'inventory',
     'finances',
     'django_tables2',
+    'django_extensions',
 )
 
 # A sample logging configuration. The only tangible logging

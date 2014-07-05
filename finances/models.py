@@ -98,12 +98,16 @@ class MaterialsInventory(models.Model):
     price_per_unit = models.DecimalField(db_column='pricePerUnit',
             decimal_places=4, max_digits=11) # Field name made lowercase.
     transaction = models.ForeignKey('Transaction', db_column='transactionId') # Field name made lowercase.
+    cost = models.DecimalField(decimal_places=2, max_digits=11, blank=True)
     class Meta:
         db_table = 'materialsInventory'
-    def __unicode__(self):
+    def __str__(self):
         return self.item.name + " quantity of " + str(self.quantity)
-    def cost(self):
+    def get_cost(self):
         return self.quantity * self.price_per_unit
+    def save(self, *args, **kwargs):
+        self.cost = self.quantity * self.price_per_unit
+        models.Model.save(self, *args, **kwargs)
 
 class MaterialsInventoryItem(models.Model):
     unit = models.ForeignKey('Unit', db_column='unitId') # Field name made lowercase.
