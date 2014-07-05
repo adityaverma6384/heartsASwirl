@@ -133,5 +133,9 @@ def chart_of_accounts_pdf(request):
     return response
 
 def manage_materials_inventory(request):
-    return render(request, "finances/manage_materials_inventory.html",
-            {"inventory": MaterialsInventory.objects.all()})
+    template = loader.get_template('finances/manage_materials_inventory.html')
+    context = RequestContext(request, {
+        'inventory': MaterialsInventory.objects.all(),
+        'totalValue': MaterialsInventory.objects.aggregate(Sum('cost'))
+        })
+    return HttpResponse(template.render(context))

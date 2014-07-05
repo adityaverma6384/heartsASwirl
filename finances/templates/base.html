@@ -4,16 +4,11 @@
 		<meta charset="utf-8">
 		<title>Hearts A Swirl Financials</title>
 		<script src="{{STATIC_URL}}js/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="{{STATIC_URL}}tablesorter/jquery.tablesorter.js"></script>
 		<script src="{{STATIC_URL}}js/jquery-ui-1.10.4.custom.js"></script>
 		<link href="{{STATIC_URL}}css/eggplant/jquery-ui-1.10.4.custom.css" rel="stylesheet">
 		<link rel="stylesheet" href="{{ STATIC_URL }}django_tables2/themes/paleblue/css/screen.css" />
-		<script>
-			$(function() {
-				$( "#accordion" ).accordion();
-				$( "#button" ).button();
-				$( "#radioset" ).buttonset();
-			});
-		</script>
+		<link rel="stylesheet" href="{{ STATIC_URL }}tablesorter/themes/blue/style.css" />
 		<style>
 			body{
 				font: 80% "Trebuchet MS", sans-serif;
@@ -80,6 +75,23 @@
 	</script>
 
 </head>
+
+{% block scripts %}
+<script>
+	$(document).ready(function(){
+		$("#sortme").tablesorter({
+			widgets: ['zebra']
+		});
+	});
+
+	$(function() {
+		$( "#accordion" ).accordion();
+		$( "#button" ).button();
+		$( "#radioset" ).buttonset();
+	});	
+</script>
+{% endblock %}
+
 <body>
 	<div class="top">
 		<div class="top_content">
@@ -109,9 +121,9 @@
 				<a href="button">New Entry</a><br>
 				<a href="button">Search Transactions</a><br>
 			</div>
-			<h1>Inventory</h1>
+			<h1>Manage Inventory</h1>
 			<div>
-				<a href="button">Materials</a><br>
+				<a href="/finances/manage_materials_inventory.html">Materials</a><br>
 				<a href="button">Finished Goods</a><br>
 			</div>
 		</div>

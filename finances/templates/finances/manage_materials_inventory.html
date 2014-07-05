@@ -1,6 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 <p>Manage Materials Inventory</p>
-Stuff
-
+<p>Total Inventory Value: ${{ totalValue.cost__sum|floatformat:"2" }}
+<table id="sortme" class="tablesorter">
+<thead>
+<tr>
+	<th>ID</th>
+	<th>Material</th>
+	<th>Price</th>
+	<th>Quantity</th>
+	<th>Value</th>
+</tr>
+</thead>
+<tbody>
+{% for item in inventory %}
+<tr class="{% cycle 'odd' 'even' %}">
+	<td>{{ forloop.counter0 }}</td>
+	<td>{{ item.item }}</td>
+	<td>{{ item.price_per_unit }}</td>
+	<td>{{ item.quantity }}</td>
+	<td>{{ item.cost }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
 {% endblock %}
