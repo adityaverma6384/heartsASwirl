@@ -18,4 +18,7 @@ urlpatterns = patterns('',
             name='materials'),
         url(r'^transactions.html', views.transactions,
             name='transactions'),
+        url(r'^manage_materials_inventory.html',
+            views.manage_materials_inventory,
+            name='manage_materials_inventory'),
         )

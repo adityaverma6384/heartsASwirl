@@ -131,3 +131,7 @@ def chart_of_accounts_pdf(request):
     p.showPage()
     p.save()
     return response
+
+def manage_materials_inventory(request):
+    return render(request, "finances/manage_materials_inventory.html",
+            {"inventory": MaterialsInventory.objects.all()})
