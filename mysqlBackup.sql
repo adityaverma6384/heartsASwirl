@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.4
+-- version 4.1.13
 -- http://www.phpmyadmin.net
 --
--- Host: localhost:3306
--- Generation Time: May 24, 2014 at 02:17 PM
--- Server version: 5.1.72
--- PHP Version: 5.3.28
+-- Host: localhost
+-- Generation Time: Feb 23, 2015 at 11:49 AM
+-- Server version: 5.1.36
+-- PHP Version: 5.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -211,7 +211,7 @@ CREATE TABLE IF NOT EXISTS `auth_user` (
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$10000$6T8yobrn6REh$d6Uwxvw7vwnXBpdrWDdJnxFFfIO31Cl7ZGmLFMg8Vjk=', '2014-05-24 20:10:04', 1, 'lanceh', '', '', 'lvhutchinson@gmail.com', 1, 1, '2014-01-19 06:31:42');
+(1, 'pbkdf2_sha256$15000$Gk5oWiRoa4gT$urHbObcksrdINkpX+N+rVFyZFtnPOJoDdVNDagL7gSM=', '2015-02-23 02:12:45', 1, 'lanceh', '', '', 'lvhutchinson@gmail.com', 1, 1, '2014-01-19 06:31:42');
 
 -- --------------------------------------------------------
 
@@ -263,7 +263,7 @@ CREATE TABLE IF NOT EXISTS `django_admin_log` (
   PRIMARY KEY (`id`),
   KEY `django_admin_log_6340c63c` (`user_id`),
   KEY `django_admin_log_37ef4eb4` (`content_type_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=389 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=437 ;
 
 --
 -- Dumping data for table `django_admin_log`
@@ -657,7 +657,55 @@ INSERT INTO `django_admin_log` (`id`, `action_time`, `user_id`, `content_type_id
 (385, '2014-02-16 01:27:48', 1, 29, '151', '6mm crackle rock round', 1, ''),
 (386, '2014-02-16 01:27:59', 1, 28, '153', '6mm crackle rock round quantity of 73', 1, ''),
 (387, '2014-02-16 01:28:59', 1, 29, '152', 'carved white rounds', 1, ''),
-(388, '2014-02-16 01:29:13', 1, 28, '154', 'carved white rounds quantity of 4', 1, '');
+(388, '2014-02-16 01:29:13', 1, 28, '154', 'carved white rounds quantity of 4', 1, ''),
+(389, '2015-02-23 02:39:17', 1, 29, '153', 'opaque white hexagons', 1, ''),
+(390, '2015-02-23 02:40:12', 1, 21, '10', '2014-import 2014-12-31', 1, ''),
+(391, '2015-02-23 02:40:27', 1, 28, '155', 'opaque white hexagons quantity of 3', 1, ''),
+(392, '2015-02-23 02:41:18', 1, 29, '154', 'small bone roundelles', 1, ''),
+(393, '2015-02-23 02:42:02', 1, 28, '156', 'small bone roundelles quantity of 105', 1, ''),
+(394, '2015-02-23 02:42:27', 1, 28, '156', 'small bone roundelles quantity of 105.0', 2, 'No fields changed.'),
+(395, '2015-02-23 02:43:21', 1, 28, '156', 'small bone roundelles quantity of 105.0', 2, 'Changed price_per_unit.'),
+(396, '2015-02-23 02:43:47', 1, 28, '155', 'opaque white hexagons quantity of 3.0', 2, 'Changed price_per_unit.'),
+(397, '2015-02-23 02:46:29', 1, 29, '155', 'large textured frosted bicones', 1, ''),
+(398, '2015-02-23 02:47:11', 1, 28, '157', 'large textured frosted bicones quantity of 18', 1, ''),
+(399, '2015-02-23 02:47:47', 1, 29, '156', '6mm matte clear rounds', 1, ''),
+(400, '2015-02-23 02:48:40', 1, 28, '158', '6mm matte clear rounds quantity of 74', 1, ''),
+(401, '2015-02-23 02:49:35', 1, 29, '157', 'clear discs with frosted centers', 1, ''),
+(402, '2015-02-23 02:50:01', 1, 21, '11', '2015-import 2015-02-22', 1, ''),
+(403, '2015-02-23 02:50:12', 1, 28, '159', 'clear discs with frosted centers quantity of 64', 1, ''),
+(404, '2015-02-23 02:51:22', 1, 29, '158', 'carnelian discs', 1, ''),
+(405, '2015-02-23 02:51:44', 1, 28, '160', 'carnelian discs quantity of 22', 1, ''),
+(406, '2015-02-23 02:57:00', 1, 29, '159', 'milky white ovals', 1, ''),
+(407, '2015-02-23 02:57:17', 1, 28, '161', 'milky white ovals quantity of 4', 1, ''),
+(408, '2015-02-23 02:58:58', 1, 29, '160', 'white shell hexagons', 1, ''),
+(409, '2015-02-23 02:59:19', 1, 28, '162', 'white shell hexagons quantity of 3', 1, ''),
+(410, '2015-02-23 03:04:59', 1, 28, '163', 'amber/orange puffed discs quantity of 32', 1, ''),
+(411, '2015-02-23 03:06:02', 1, 29, '161', 'yellow/orange cracked glass', 1, ''),
+(412, '2015-02-23 03:06:15', 1, 28, '164', 'yellow/orange cracked glass quantity of 71', 1, ''),
+(413, '2015-02-23 03:08:52', 1, 29, '162', 'oriental trading hearts', 1, ''),
+(414, '2015-02-23 03:09:08', 1, 28, '165', 'oriental trading hearts quantity of 21', 1, ''),
+(415, '2015-02-23 03:13:34', 1, 29, '163', '6mm yellow jade ', 1, ''),
+(416, '2015-02-23 03:13:53', 1, 28, '166', '6mm yellow jade  quantity of 44', 1, ''),
+(417, '2015-02-23 03:24:40', 1, 29, '164', '6mm yellow faceted rounds', 1, ''),
+(418, '2015-02-23 03:26:37', 1, 28, '167', '6mm yellow faceted rounds quantity of 31', 1, ''),
+(419, '2015-02-23 03:28:18', 1, 29, '165', 'amber cubes', 1, ''),
+(420, '2015-02-23 03:28:46', 1, 28, '168', 'amber cubes quantity of 17', 1, ''),
+(421, '2015-02-23 03:29:53', 1, 29, '166', 'amber czech tulips', 1, ''),
+(422, '2015-02-23 03:30:00', 1, 28, '169', 'amber czech tulips quantity of 3', 1, ''),
+(423, '2015-02-23 03:31:36', 1, 29, '167', 'amber disc pearls', 1, ''),
+(424, '2015-02-23 03:32:02', 1, 28, '170', 'amber disc pearls quantity of 16', 1, ''),
+(425, '2015-02-23 03:33:17', 1, 29, '168', 'amber flat diamonds', 1, ''),
+(426, '2015-02-23 03:33:33', 1, 28, '171', 'amber flat diamonds quantity of 43', 1, ''),
+(427, '2015-02-23 03:33:54', 1, 29, '169', 'amber bicones', 1, ''),
+(428, '2015-02-23 03:34:00', 1, 28, '172', 'amber bicones quantity of 11', 1, ''),
+(429, '2015-02-23 03:39:35', 1, 21, '12', 'Pre-2014 import 2013-01-01', 1, ''),
+(430, '2015-02-23 03:39:45', 1, 28, '165', 'oriental trading hearts quantity of 21.0', 2, 'Changed transaction.'),
+(431, '2015-02-23 03:40:06', 1, 28, '167', '6mm yellow faceted rounds quantity of 31.0', 2, 'Changed transaction.'),
+(432, '2015-02-23 03:40:13', 1, 28, '168', 'amber cubes quantity of 17.0', 2, 'Changed transaction.'),
+(433, '2015-02-23 03:40:18', 1, 28, '169', 'amber czech tulips quantity of 3.0', 2, 'Changed transaction.'),
+(434, '2015-02-23 03:40:27', 1, 28, '170', 'amber disc pearls quantity of 16.0', 2, 'Changed transaction.'),
+(435, '2015-02-23 03:40:33', 1, 28, '171', 'amber flat diamonds quantity of 43.0', 2, 'Changed transaction.'),
+(436, '2015-02-23 03:40:38', 1, 28, '172', 'amber bicones quantity of 11.0', 2, 'Changed transaction.');
 
 -- --------------------------------------------------------
 
@@ -713,6 +761,20 @@ INSERT INTO `django_content_type` (`id`, `name`, `app_label`, `model`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `django_migrations`
+--
+
+CREATE TABLE IF NOT EXISTS `django_migrations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `app` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `applied` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `django_session`
 --
 
@@ -733,7 +795,11 @@ INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALU
 ('b0k4cy49qz9nuoi1zxk0cqgnelbrbinw', 'YjgzOTk5ZDExMDljZjFjZmQxOTRkM2U3MDJjNzBhZTM0MTU0MDQzYzqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQSKAQF1Lg==', '2014-02-04 23:49:18'),
 ('5dfkvefpgxkcc1lkul2e3emxzaids09y', 'YjgzOTk5ZDExMDljZjFjZmQxOTRkM2U3MDJjNzBhZTM0MTU0MDQzYzqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQSKAQF1Lg==', '2014-02-13 21:23:05'),
 ('myygenrvgclcwdjy09cb6pcia5hk4fvn', 'YjgzOTk5ZDExMDljZjFjZmQxOTRkM2U3MDJjNzBhZTM0MTU0MDQzYzqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQSKAQF1Lg==', '2014-02-22 00:52:40'),
-('8prhxj4of0tal9pn7u9u0vtp98lz8he1', 'YjgzOTk5ZDExMDljZjFjZmQxOTRkM2U3MDJjNzBhZTM0MTU0MDQzYzqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQSKAQF1Lg==', '2014-06-07 20:10:04');
+('8prhxj4of0tal9pn7u9u0vtp98lz8he1', 'YjgzOTk5ZDExMDljZjFjZmQxOTRkM2U3MDJjNzBhZTM0MTU0MDQzYzqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQSKAQF1Lg==', '2014-06-07 20:10:04'),
+('ym1vbr6xfwouz2jmv8ftpa1882557l0g', 'MDQxY2U2YjUzMTllNjMzMDNjZjA4ZDJhZWFmOTg1ZTZiN2EwMzBlZDp7Il9hdXRoX3VzZXJfaGFzaCI6ImEyNWM4ZWFhZDIyODQ2YjNhMWI1MzRhN2QyMWM5ZGFlYjk3NjZmMTMiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9', '2015-03-09 02:08:59'),
+('csuimnh602rfg01rz0kioih6rrgtnx4o', 'YjgzOTk5ZDExMDljZjFjZmQxOTRkM2U3MDJjNzBhZTM0MTU0MDQzYzqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQSKAQF1Lg==', '2014-07-18 23:23:52'),
+('ukauiakv1k9ar3oajzutjeh1amg631s8', 'YjgzOTk5ZDExMDljZjFjZmQxOTRkM2U3MDJjNzBhZTM0MTU0MDQzYzqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQSKAQF1Lg==', '2015-03-09 01:51:14'),
+('e9e12xxsz5mjumw2n1np0iltzvhgpvop', 'OWJlNDI2NjhmYTEyYjNjNzRkMjJhZDgyZjE0YmY5ODExMGNmNDg4OTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6MSwiX2F1dGhfdXNlcl9oYXNoIjoiYTI1YzhlYWFkMjI4NDZiM2ExYjUzNGE3ZDIxYzlkYWViOTc2NmYxMyJ9', '2015-03-09 02:12:45');
 
 -- --------------------------------------------------------
 
@@ -833,8 +899,8 @@ CREATE TABLE IF NOT EXISTS `finances_entry` (
 --
 
 INSERT INTO `finances_entry` (`id`, `transaction_id`, `type_id`, `account_id`, `amount`) VALUES
-(1, 1, 1, 1, 50.00),
-(2, 1, 2, 2, 50.00);
+(1, 1, 1, 1, '50.00'),
+(2, 1, 2, 2, '50.00');
 
 -- --------------------------------------------------------
 
@@ -868,7 +934,7 @@ CREATE TABLE IF NOT EXISTS `finances_transaction` (
   `description` varchar(256) NOT NULL,
   `notes` varchar(1024) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `finances_transaction`
@@ -883,7 +949,10 @@ INSERT INTO `finances_transaction` (`id`, `date`, `description`, `notes`) VALUES
 (6, '2014-01-23', 'Michael''s', ''),
 (7, '2014-01-28', 'Hobby Lobby', ''),
 (8, '2014-02-01', 'Michael''s', ''),
-(9, '2014-01-01', 'Initial Import', '');
+(9, '2014-01-01', 'Initial Import', ''),
+(10, '2014-12-31', '2014-import', 'Finishing up 2014 importing'),
+(11, '2015-02-22', '2015-import', 'Things purchased in 2015 to date'),
+(12, '2013-01-01', 'Pre-2014 import', 'Things on hand as of 1/1/14');
 
 -- --------------------------------------------------------
 
@@ -976,165 +1045,184 @@ CREATE TABLE IF NOT EXISTS `materialsInventory` (
   `quantity` float NOT NULL,
   `pricePerUnit` float NOT NULL,
   `transactionId` int(11) NOT NULL,
+  `cost` float DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `materialsInventoryItemId` (`materialsInventoryItemId`),
   KEY `transactionId` (`transactionId`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=155 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=173 ;
 
 --
 -- Dumping data for table `materialsInventory`
 --
 
-INSERT INTO `materialsInventory` (`id`, `materialsInventoryItemId`, `quantity`, `pricePerUnit`, `transactionId`) VALUES
-(6, 3, 8, 0.2, 2),
-(7, 4, 6, 0.2667, 2),
-(8, 5, 18, 0.2134, 3),
-(9, 6, 18, 0.1421, 3),
-(10, 7, 2, 1.07, 3),
-(11, 8, 3, 1.07, 4),
-(12, 9, 15, 0.214, 4),
-(13, 10, 34, 0.118, 4),
-(14, 11, 66, 0.0365, 4),
-(15, 12, 25, 0.0963, 4),
-(16, 13, 25, 0.0963, 4),
-(17, 14, 25, 0.0749, 4),
-(18, 15, 79, 0.0508, 4),
-(19, 16, 1, 0.8025, 4),
-(20, 17, 1, 0.8025, 4),
-(21, 18, 1, 0.8025, 4),
-(22, 19, 1, 0.8025, 4),
-(23, 20, 80, 0.0531, 5),
-(24, 21, 16, 0.0649, 5),
-(25, 22, 30, 0.1066, 5),
-(26, 23, 180, 0.0106, 5),
-(27, 24, 22, 0.2417, 5),
-(28, 25, 14, 0.1903, 5),
-(29, 26, 13, 0.3696, 5),
-(30, 27, 70, 0.0306, 6),
-(31, 28, 32, 0.0599, 6),
-(32, 29, 30, 0.071, 7),
-(33, 30, 22, 0.0482, 7),
-(34, 31, 11, 0.1936, 7),
-(35, 32, 24, 0.0664, 7),
-(36, 33, 1, 1.3161, 7),
-(37, 34, 2, 0.7865, 7),
-(38, 35, 4, 0.7998, 8),
-(39, 36, 155, 0.0112, 9),
-(40, 37, 101, 0.01, 9),
-(41, 38, 60, 0.01, 9),
-(42, 39, 1, 0.0963, 9),
-(43, 40, 15, 0.0963, 9),
-(44, 41, 8, 0.01, 9),
-(45, 42, 14, 0.0764, 9),
-(46, 43, 16, 0.04, 9),
-(47, 44, 22, 0.04, 9),
-(48, 45, 8, 0.06, 9),
-(49, 46, 10, 0.1, 9),
-(50, 47, 3, 0.06, 9),
-(51, 48, 2, 0.5, 9),
-(52, 50, 24, 0.01, 9),
-(53, 51, 40, 0.0372, 9),
-(54, 52, 1, 0.12, 9),
-(55, 53, 3, 0.06, 9),
-(56, 54, 23, 0.08, 9),
-(57, 55, 6, 0.03, 9),
-(58, 56, 20, 0.05, 9),
-(59, 57, 23, 0.08, 9),
-(60, 58, 5, 0.1798, 9),
-(61, 59, 10, 0.214, 9),
-(62, 60, 37, 0.0208, 9),
-(63, 61, 7, 0.1689, 9),
-(64, 62, 22, 0.1115, 9),
-(65, 63, 12, 0.1921, 9),
-(66, 64, 10, 0.06, 9),
-(67, 65, 8, 0.08, 9),
-(68, 66, 1, 0.5, 9),
-(69, 67, 21, 0.0968, 9),
-(70, 68, 41, 0.0764, 9),
-(71, 69, 17, 0.1315, 9),
-(72, 70, 28, 0.1115, 9),
-(73, 71, 8, 0.1115, 9),
-(74, 72, 6, 0.1115, 9),
-(75, 73, 15, 0.09, 9),
-(76, 74, 6, 0.05, 9),
-(77, 75, 4, 0.05, 9),
-(78, 76, 16, 0.09, 9),
-(79, 77, 14, 0.05, 9),
-(80, 78, 4, 0.0399, 9),
-(81, 79, 48, 0.03, 9),
-(82, 80, 22, 0.107, 9),
-(83, 81, 15, 0.1798, 9),
-(84, 82, 44, 0.0419, 9),
-(85, 83, 34, 0.0457, 9),
-(86, 84, 101, 0.0955, 9),
-(87, 85, 7, 0.08, 9),
-(88, 86, 33, 0.15, 9),
-(89, 87, 51, 0.0457, 9),
-(90, 88, 2, 0.0249, 9),
-(91, 89, 3, 0.02, 9),
-(92, 90, 50, 0.02, 9),
-(93, 91, 6, 0.02, 9),
-(94, 92, 13, 0.2739, 9),
-(95, 93, 11, 0.0482, 9),
-(96, 94, 11, 0.04, 9),
-(97, 96, 19, 0.04, 9),
-(98, 97, 6, 0.01, 9),
-(99, 98, 11, 0.01, 9),
-(100, 99, 4, 0.7958, 9),
-(101, 100, 39, 0.0955, 9),
-(102, 101, 27, 0.07, 9),
-(103, 102, 26, 0.07, 9),
-(104, 103, 14, 0.06, 9),
-(105, 104, 1, 0.09, 9),
-(106, 105, 1, 0.12, 9),
-(107, 106, 13, 0.0482, 9),
-(108, 107, 47, 0.0681, 9),
-(109, 108, 49, 0.1, 9),
-(110, 109, 35, 0.0238, 9),
-(111, 110, 49, 0.0459, 9),
-(112, 111, 2, 0.09, 9),
-(113, 112, 11, 0.06, 9),
-(114, 113, 14, 0.06, 9),
-(115, 114, 12, 0.08, 9),
-(116, 115, 3, 0.08, 9),
-(117, 116, 1, 0.11, 9),
-(118, 117, 4, 0.6634, 9),
-(119, 118, 9, 0.1498, 9),
-(120, 119, 34, 0.096, 9),
-(121, 120, 20, 0.2226, 9),
-(122, 121, 1, 4.28, 9),
-(123, 122, 5, 0.6433, 9),
-(124, 123, 10, 0.15, 9),
-(125, 124, 34, 0.0437, 9),
-(126, 125, 23, 0.06, 9),
-(127, 126, 8, 0.08, 9),
-(128, 127, 7, 0.09, 9),
-(129, 128, 20, 0.08, 9),
-(130, 129, 5, 0.09, 9),
-(131, 130, 10, 0.11, 9),
-(132, 131, 11, 0.07, 9),
-(133, 132, 18, 0.14, 9),
-(134, 133, 15, 0.0963, 9),
-(135, 134, 1, 1.5943, 9),
-(136, 135, 38, 0.09, 9),
-(137, 136, 20, 0.05, 9),
-(138, 137, 37, 0.04, 9),
-(139, 138, 87, 0.0535, 9),
-(140, 139, 1, 0.62, 9),
-(141, 140, 6, 0.08, 9),
-(142, 141, 39, 0.06, 9),
-(143, 142, 1, 0.09, 9),
-(144, 143, 86, 0.03, 9),
-(145, 144, 96, 0.0599, 9),
-(146, 145, 44, 0.0511, 9),
-(147, 145, 22, 0.0727, 9),
-(148, 146, 1, 2.14, 9),
-(149, 147, 2, 0.0626, 9),
-(150, 148, 8, 0.08, 9),
-(151, 149, 45, 0.1924, 9),
-(152, 150, 1, 1.6478, 9),
-(153, 151, 73, 0.1052, 9),
-(154, 152, 4, 0.06, 9);
+INSERT INTO `materialsInventory` (`id`, `materialsInventoryItemId`, `quantity`, `pricePerUnit`, `transactionId`, `cost`) VALUES
+(6, 3, 8, 0.2, 2, 1.6),
+(7, 4, 6, 0.2667, 2, 1.6),
+(8, 5, 18, 0.2134, 3, 3.84),
+(9, 6, 18, 0.1421, 3, 2.56),
+(10, 7, 2, 1.07, 3, 2.14),
+(11, 8, 3, 1.07, 4, 3.21),
+(12, 9, 15, 0.214, 4, 3.21),
+(13, 10, 34, 0.118, 4, 4.01),
+(14, 11, 66, 0.0365, 4, 2.41),
+(15, 12, 25, 0.0963, 4, 2.41),
+(16, 13, 25, 0.0963, 4, 2.41),
+(17, 14, 25, 0.0749, 4, 1.87),
+(18, 15, 79, 0.0508, 4, 4.01),
+(19, 16, 1, 0.8025, 4, 0.8),
+(20, 17, 1, 0.8025, 4, 0.8),
+(21, 18, 1, 0.8025, 4, 0.8),
+(22, 19, 1, 0.8025, 4, 0.8),
+(23, 20, 80, 0.0531, 5, 4.25),
+(24, 21, 16, 0.0649, 5, 1.04),
+(25, 22, 30, 0.1066, 5, 3.2),
+(26, 23, 180, 0.0106, 5, 1.91),
+(27, 24, 22, 0.2417, 5, 5.32),
+(28, 25, 14, 0.1903, 5, 2.66),
+(29, 26, 13, 0.3696, 5, 4.8),
+(30, 27, 70, 0.0306, 6, 2.14),
+(31, 28, 32, 0.0599, 6, 1.92),
+(32, 29, 30, 0.071, 7, 2.13),
+(33, 30, 22, 0.0482, 7, 1.06),
+(34, 31, 11, 0.1936, 7, 2.13),
+(35, 32, 24, 0.0664, 7, 1.59),
+(36, 33, 1, 1.3161, 7, 1.32),
+(37, 34, 2, 0.7865, 7, 1.57),
+(38, 35, 4, 0.7998, 8, 3.2),
+(39, 36, 155, 0.0112, 9, 1.74),
+(40, 37, 101, 0.01, 9, 1.01),
+(41, 38, 60, 0.01, 9, 0.6),
+(42, 39, 1, 0.0963, 9, 0.1),
+(43, 40, 15, 0.0963, 9, 1.44),
+(44, 41, 8, 0.01, 9, 0.08),
+(45, 42, 14, 0.0764, 9, 1.07),
+(46, 43, 16, 0.04, 9, 0.64),
+(47, 44, 22, 0.04, 9, 0.88),
+(48, 45, 8, 0.06, 9, 0.48),
+(49, 46, 10, 0.1, 9, 1),
+(50, 47, 3, 0.06, 9, 0.18),
+(51, 48, 2, 0.5, 9, 1),
+(52, 50, 24, 0.01, 9, 0.24),
+(53, 51, 40, 0.0372, 9, 1.49),
+(54, 52, 1, 0.12, 9, 0.12),
+(55, 53, 3, 0.06, 9, 0.18),
+(56, 54, 23, 0.08, 9, 1.84),
+(57, 55, 6, 0.03, 9, 0.18),
+(58, 56, 20, 0.05, 9, 1),
+(59, 57, 23, 0.08, 9, 1.84),
+(60, 58, 5, 0.1798, 9, 0.9),
+(61, 59, 10, 0.214, 9, 2.14),
+(62, 60, 37, 0.0208, 9, 0.77),
+(63, 61, 7, 0.1689, 9, 1.18),
+(64, 62, 22, 0.1115, 9, 2.45),
+(65, 63, 12, 0.1921, 9, 2.31),
+(66, 64, 10, 0.06, 9, 0.6),
+(67, 65, 8, 0.08, 9, 0.64),
+(68, 66, 1, 0.5, 9, 0.5),
+(69, 67, 21, 0.0968, 9, 2.03),
+(70, 68, 41, 0.0764, 9, 3.13),
+(71, 69, 17, 0.1315, 9, 2.24),
+(72, 70, 28, 0.1115, 9, 3.12),
+(73, 71, 8, 0.1115, 9, 0.89),
+(74, 72, 6, 0.1115, 9, 0.67),
+(75, 73, 15, 0.09, 9, 1.35),
+(76, 74, 6, 0.05, 9, 0.3),
+(77, 75, 4, 0.05, 9, 0.2),
+(78, 76, 16, 0.09, 9, 1.44),
+(79, 77, 14, 0.05, 9, 0.7),
+(80, 78, 4, 0.0399, 9, 0.16),
+(81, 79, 48, 0.03, 9, 1.44),
+(82, 80, 22, 0.107, 9, 2.35),
+(83, 81, 15, 0.1798, 9, 2.7),
+(84, 82, 44, 0.0419, 9, 1.84),
+(85, 83, 34, 0.0457, 9, 1.55),
+(86, 84, 101, 0.0955, 9, 9.65),
+(87, 85, 7, 0.08, 9, 0.56),
+(88, 86, 33, 0.15, 9, 4.95),
+(89, 87, 51, 0.0457, 9, 2.33),
+(90, 88, 2, 0.0249, 9, 0.05),
+(91, 89, 3, 0.02, 9, 0.06),
+(92, 90, 50, 0.02, 9, 1),
+(93, 91, 6, 0.02, 9, 0.12),
+(94, 92, 13, 0.2739, 9, 3.56),
+(95, 93, 11, 0.0482, 9, 0.53),
+(96, 94, 11, 0.04, 9, 0.44),
+(97, 96, 19, 0.04, 9, 0.76),
+(98, 97, 6, 0.01, 9, 0.06),
+(99, 98, 11, 0.01, 9, 0.11),
+(100, 99, 4, 0.7958, 9, 3.18),
+(101, 100, 39, 0.0955, 9, 3.72),
+(102, 101, 27, 0.07, 9, 1.89),
+(103, 102, 26, 0.07, 9, 1.82),
+(104, 103, 14, 0.06, 9, 0.84),
+(105, 104, 1, 0.09, 9, 0.09),
+(106, 105, 1, 0.12, 9, 0.12),
+(107, 106, 13, 0.0482, 9, 0.63),
+(108, 107, 47, 0.0681, 9, 3.2),
+(109, 108, 49, 0.1, 9, 4.9),
+(110, 109, 35, 0.0238, 9, 0.83),
+(111, 110, 49, 0.0459, 9, 2.25),
+(112, 111, 2, 0.09, 9, 0.18),
+(113, 112, 11, 0.06, 9, 0.66),
+(114, 113, 14, 0.06, 9, 0.84),
+(115, 114, 12, 0.08, 9, 0.96),
+(116, 115, 3, 0.08, 9, 0.24),
+(117, 116, 1, 0.11, 9, 0.11),
+(118, 117, 4, 0.6634, 9, 2.65),
+(119, 118, 9, 0.1498, 9, 1.35),
+(120, 119, 34, 0.096, 9, 3.26),
+(121, 120, 20, 0.2226, 9, 4.45),
+(122, 121, 1, 4.28, 9, 4.28),
+(123, 122, 5, 0.6433, 9, 3.22),
+(124, 123, 10, 0.15, 9, 1.5),
+(125, 124, 34, 0.0437, 9, 1.49),
+(126, 125, 23, 0.06, 9, 1.38),
+(127, 126, 8, 0.08, 9, 0.64),
+(128, 127, 7, 0.09, 9, 0.63),
+(129, 128, 20, 0.08, 9, 1.6),
+(130, 129, 5, 0.09, 9, 0.45),
+(131, 130, 10, 0.11, 9, 1.1),
+(132, 131, 11, 0.07, 9, 0.77),
+(133, 132, 18, 0.14, 9, 2.52),
+(134, 133, 15, 0.0963, 9, 1.44),
+(135, 134, 1, 1.5943, 9, 1.59),
+(136, 135, 38, 0.09, 9, 3.42),
+(137, 136, 20, 0.05, 9, 1),
+(138, 137, 37, 0.04, 9, 1.48),
+(139, 138, 87, 0.0535, 9, 4.65),
+(140, 139, 1, 0.62, 9, 0.62),
+(141, 140, 6, 0.08, 9, 0.48),
+(142, 141, 39, 0.06, 9, 2.34),
+(143, 142, 1, 0.09, 9, 0.09),
+(144, 143, 86, 0.03, 9, 2.58),
+(145, 144, 96, 0.0599, 9, 5.75),
+(146, 145, 44, 0.0511, 9, 2.25),
+(147, 145, 22, 0.0727, 9, 1.6),
+(148, 146, 1, 2.14, 9, 2.14),
+(149, 147, 2, 0.0626, 9, 0.13),
+(150, 148, 8, 0.08, 9, 0.64),
+(151, 149, 45, 0.1924, 9, 8.66),
+(152, 150, 1, 1.6478, 9, 1.65),
+(153, 151, 73, 0.1052, 9, 7.68),
+(154, 152, 4, 0.06, 9, 0.24),
+(155, 153, 3, 0.32, 10, 0.96),
+(156, 154, 105, 0.032, 10, 3.36),
+(157, 155, 18, 0.2055, 10, 3.7),
+(158, 156, 74, 0.0852, 10, 6.3),
+(159, 157, 64, 0.0332, 11, 2.12),
+(160, 158, 22, 0.194, 10, 4.27),
+(161, 159, 4, 0.212, 10, 0.85),
+(162, 160, 3, 0.06, 10, 0.18),
+(163, 119, 32, 0.0999, 10, 3.2),
+(164, 161, 71, 0.0595, 10, 4.22),
+(165, 162, 21, 0.24, 12, 5.04),
+(166, 163, 44, 0.0338, 10, 1.49),
+(167, 164, 31, 0.06, 12, 1.86),
+(168, 165, 17, 0.04, 12, 0.68),
+(169, 166, 3, 0.06, 12, 0.18),
+(170, 167, 16, 0.08, 12, 1.28),
+(171, 168, 43, 0.06, 12, 2.58),
+(172, 169, 11, 0.05, 12, 0.55);
 
 -- --------------------------------------------------------
 
@@ -1152,7 +1240,7 @@ CREATE TABLE IF NOT EXISTS `materialsInventoryItem` (
   `name` varchar(256) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `unitId` (`unitId`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=153 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=170 ;
 
 --
 -- Dumping data for table `materialsInventoryItem`
@@ -1307,7 +1395,24 @@ INSERT INTO `materialsInventoryItem` (`id`, `unitId`, `description`, `photo`, `d
 (149, 1, 'none', 'none', '2014-01-01', '2014-01-01', 'large freshwater pearls'),
 (150, 1, 'none', 'none', '2014-01-01', '2014-01-01', 'peridot Swarovski leaf pendant'),
 (151, 1, 'none', 'none', '2014-01-01', '2014-01-01', '6mm crackle rock round'),
-(152, 1, 'none', 'none', '2014-01-01', '2014-01-01', 'carved white rounds');
+(152, 1, 'none', 'none', '2014-01-01', '2014-01-01', 'carved white rounds'),
+(153, 1, ' ', ' ', '2014-12-31', '2014-12-31', 'opaque white hexagons'),
+(154, 1, ' ', ' ', '2014-12-31', '2014-12-31', 'small bone roundelles'),
+(155, 1, ' ', ' ', '2014-12-31', '2014-12-31', 'large textured frosted bicones'),
+(156, 1, ' ', ' ', '2014-12-31', '2014-12-31', '6mm matte clear rounds'),
+(157, 1, ' ', ' ', '2015-02-22', '2015-02-22', 'clear discs with frosted centers'),
+(158, 1, ' ', ' ', '2014-12-31', '2014-12-31', 'carnelian discs'),
+(159, 1, ' ', ' ', '2014-12-31', '2014-12-31', 'milky white ovals'),
+(160, 1, ' ', ' ', '2014-12-31', '2014-12-31', 'white shell hexagons'),
+(161, 1, ' ', ' ', '2014-12-31', '2014-12-31', 'yellow/orange cracked glass'),
+(162, 1, ' ', ' ', '2014-12-31', '2014-12-31', 'oriental trading hearts'),
+(163, 1, '  ', '  ', '2014-12-31', '2014-12-31', '6mm yellow jade '),
+(164, 1, ' ', ' ', '2014-12-31', '2014-12-31', '6mm yellow faceted rounds'),
+(165, 1, ' ', ' ', '2014-12-31', '2014-12-31', 'amber cubes'),
+(166, 1, ' ', ' ', '2014-12-31', '2014-12-31', 'amber czech tulips'),
+(167, 1, ' ', ' ', '2014-12-31', '2014-12-31', 'amber disc pearls'),
+(168, 1, ' ', ' ', '2014-12-31', '2014-12-31', 'amber flat diamonds'),
+(169, 1, ' ', ' ', '2014-12-31', '2014-12-31', 'amber bicones');
 
 -- --------------------------------------------------------
 
