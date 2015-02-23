@@ -14,7 +14,7 @@ admin.site.register(FinishedGoodsMaterialsUsed)
 class MaterialsInventoryAdmin(admin.ModelAdmin):
     fields = ['item', 'quantity', 'transaction', 'price_per_unit', 'cost' ]
     readonly_fields = ['cost']
-    list_display = ('item', 'quantity', 'price_per_unit', 'cost')
+    list_display = ('item', 'transaction', 'quantity', 'price_per_unit', 'cost')
 admin.site.register(MaterialsInventory, MaterialsInventoryAdmin)
 class MaterialsInventoryItemAdmin(admin.ModelAdmin):
     fields = ['name', 'unit', 'description', 'photo', 'date_last_purchased', 'date_last_used']
