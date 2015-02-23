@@ -120,8 +120,6 @@ class MaterialsInventoryItem(models.Model):
         db_table = 'materialsInventoryItem'
     def __unicode__(self):
         return self.name
-    def __str__(self):
-        return self.name
 
 class Unit(models.Model):
     name = models.CharField(max_length=32)
