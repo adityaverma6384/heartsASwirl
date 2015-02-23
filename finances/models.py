@@ -75,7 +75,7 @@ class FinishedGoodsInventoryItem(models.Model):
         return self.description
 
 class FinishedGoodsInventoryType(models.Model):
-    name = models.CharField(max_length=128L)
+    name = models.CharField(max_length=128)
     description = models.TextField()
     class Meta:
         db_table = 'finishedGoodsInventoryType'
@@ -115,14 +115,14 @@ class MaterialsInventoryItem(models.Model):
     photo = models.TextField()
     date_last_purchased = models.DateField(db_column='dateLastPurchased') # Field name made lowercase.
     date_last_used = models.DateField(db_column='dateLastUsed') # Field name made lowercase.
-    name = models.CharField(max_length=256L)
+    name = models.CharField(max_length=256)
     class Meta:
         db_table = 'materialsInventoryItem'
     def __unicode__(self):
         return self.name
 
 class Unit(models.Model):
-    name = models.CharField(max_length=32L)
+    name = models.CharField(max_length=32)
     class Meta:
         db_table = 'unit'
     def __unicode__(self):
